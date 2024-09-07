@@ -23,7 +23,7 @@ Output: 3
 #include <bits/stdc++.h>
 using namespace std;
 
-// SIMPLY THEY ARE ASKING NO OF CONNECTED COMPONENTS
+// SIMPLY THEY ARE ASKING NO OF CONNECTED COMPONENTS in a graph
 
 class Solution
 {
