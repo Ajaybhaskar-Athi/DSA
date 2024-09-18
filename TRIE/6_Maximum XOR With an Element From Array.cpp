@@ -10,7 +10,7 @@ public:
             vector<int>ans;
         for(int i=0;i<queries.size();i++){
             int xi=queries[i][0];
-            int ai=queries[i][1];
+            int ai=queries[i][1];   
             int maxXor=-1;
             for(int j=0;j<nums.size();j++){
                 if(nums[j]<=ai){
