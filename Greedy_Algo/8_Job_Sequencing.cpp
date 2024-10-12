@@ -60,6 +60,77 @@ vector<vector<int>> Jobs = {
 }
 
 
+//same above for finding slots iinstead of for loop use lower bound concept 
+/*
+
+#include <vector>
+#include <algorithm>
+#include <set>
+#include <iostream>
+
+using namespace std;
+
+class Solution {
+public:
+    // Comparison function to sort jobs based on profit
+    bool static compareSort(const vector<int>& a, const vector<int>& b) {
+        return a[2] > b[2]; // Sort jobs in descending order of profit
+    }
+    
+    vector<int> JobScheduling(vector<vector<int>>& v, int n) {
+        // Step 1: Sort the jobs based on profit
+        sort(v.begin(), v.end(), compareSort);
+        
+        // Step 2: Create a set to track available slots (days)
+        set<int> availableSlots;
+
+        // Assume the maximum deadline is at most 'n' (the number of jobs)
+        for (int i = 1; i <= n; i++) {
+            availableSlots.insert(i); // Add days 1 to n to available slots
+        }
+
+        int countJobs = 0;    // Count of scheduled jobs
+        int profit = 0;       // Total profit from scheduled jobs
+
+        // Step 3: Schedule jobs using lower_bound logic
+        for (const auto& job : v) {
+            int jobId = job[0];
+            int deadline = job[1];
+            int jobProfit = job[2];
+
+            // Find the first available slot that is greater than or equal to the job's deadline
+            auto it = availableSlots.lower_bound(deadline + 1);
+
+            // If an available slot is found
+            if (it != availableSlots.begin()) { // Check if there is a valid slot
+                --it; // Move the iterator to the last valid slot
+                // Schedule the job on this day
+                countJobs++;            // Increment count of jobs scheduled
+                profit += jobProfit;    // Add the profit
+                availableSlots.erase(it); // Remove this day from available slots
+            }
+        }
+
+        // Step 4: Return the result
+        return {profit, countJobs}; // Return total profit and count of jobs
+    } 
+};
+
+// Example usage
+int main() {
+    Solution sol;
+    vector<vector<int>> jobs = { {3, 1, 40}, {4, 1, 30}, {1, 4, 20}, {2, 1, 10} };
+    int n = jobs.size();
+    
+    vector<int> result = sol.JobScheduling(jobs, n);
+    cout << "Total profit: " << result[0] << ", Number of jobs scheduled: " << result[1] << endl;
+
+    return 0;
+}
+*/
+
+
+
 
 
 
