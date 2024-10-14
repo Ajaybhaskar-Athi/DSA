@@ -164,6 +164,9 @@ int main() {
 
 
 
+
+
+
 //SPACE optimisation tc=O(n) and sc=O(1)
 
 
