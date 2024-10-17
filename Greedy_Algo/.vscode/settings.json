@@ -5,6 +5,7 @@
     "initializer_list": "c",
     "regex": "c",
     "utility": "c",
-    "valarray": "c"
+    "valarray": "c",
+    "vector": "cpp"
   }
 }
