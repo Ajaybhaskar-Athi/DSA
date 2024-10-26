@@ -25,6 +25,22 @@ int kth_Smallest(vector<int>&nums,int k){
     }
     return max_heap.top();
 }
+/*
+int kth_Smallest(vector<int>&nums,int k){
+    priority_queue<int>max_heap;
+
+    for(int i=0;i<nums.size();i++){
+        if(i<k)max_heap.push(nums[i]);
+        else if(nums[i]<max_heap.top()){
+            max_heap.pop();
+            max_heap.push(nums[i]);
+        }
+    }
+    
+    return max_heap.top();
+
+}*/
+
 
 int main(){
     vector<int>v={1,5,6,8,0,2};
